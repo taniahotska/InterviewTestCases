@@ -29,6 +29,9 @@ export default defineConfig({
     
     // Screenshot on failure
     screenshot: 'only-on-failure',
+    
+    // Run tests in headed mode
+    headless: false,
   },
 
   // Configure projects for major browsers
