@@ -6,13 +6,18 @@ import { DashboardPage } from '../pages/DashboardPage';
  //Critical Test Case 1: User Authentication 
  
 test.describe('Authentication Tests', () => {
+  let loginPage: LoginPage;
+
+  test.beforeEach(async ({ page }) => {
+    loginPage = new LoginPage(page);
+    await loginPage.goto();
+  });
+
   test('should login successfully with valid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
     const dashboardPage = new DashboardPage(page);
     const username = process.env.TEST_USERNAME!;
     const password = process.env.TEST_PASSWORD!;
 
-    await loginPage.goto();
     await loginPage.login(username, password);
     await dashboardPage.verifyDashboardLoaded();
     await expect(page).toHaveURL(/.*dashboard/);
@@ -20,9 +25,6 @@ test.describe('Authentication Tests', () => {
 
   
   test('should fail to login with invalid credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-
-    await loginPage.goto();
     await loginPage.usernameInput.fill('InvalidUser');
     await loginPage.passwordInput.fill('InvalidPass');
     await loginPage.loginButton.click();
@@ -33,9 +35,6 @@ test.describe('Authentication Tests', () => {
   });
 
   test('should fail to login with empty credentials', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-
-    await loginPage.goto();
     await loginPage.loginButton.click();
     
     const requiredMessages = page.locator('span.oxd-input-field-error-message');
@@ -47,9 +46,6 @@ test.describe('Authentication Tests', () => {
 
 
   test('should display forgot password link', async ({ page }) => {
-    const loginPage = new LoginPage(page);
-
-    await loginPage.goto();
     await expect(loginPage.forgotPasswordLink).toBeVisible();
   });
 });

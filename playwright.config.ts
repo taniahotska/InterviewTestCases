@@ -42,8 +42,8 @@ export default defineConfig({
     // Video on failure
     video: 'retain-on-failure',
     
-    // Run tests in headed mode
-    headless: false,
+    // Run tests in headed mode (false for local, true for CI)
+    headless: !!process.env.CI,
     
     // Viewport size
     viewport: { width: 1280, height: 720 },
