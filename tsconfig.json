@@ -9,8 +9,21 @@
     "strict": true,
     "skipLibCheck": true,
     "resolveJsonModule": true,
-    "types": ["node", "@playwright/test"]
+    "types": ["node", "@playwright/test"],
+    "outDir": "./dist",
+    "rootDir": "./"
   },
-  "include": ["tests/**/*", "playwright.config.ts"],
-  "exclude": ["node_modules"]
+  "include": [
+    "tests/**/*",
+    "pages/**/*",
+    "utils/**/*",
+    "fixtures/**/*",
+    "playwright.config.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "test-results",
+    "playwright-report"
+  ]
 }
