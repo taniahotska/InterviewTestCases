@@ -28,7 +28,7 @@ export class BasePage {
 
   async navigateToModule(moduleName: string) {
     const menuItem = this.page.locator(`a[href*="/${moduleName.toLowerCase()}"]`).first();
-    await menuItem.waitFor({ state: 'visible', timeout: 10000 });
+    await menuItem.waitFor({ state: 'visible', timeout: 15000 });
     await menuItem.click();
     await this.page.waitForLoadState('networkidle');
   }

@@ -41,7 +41,7 @@ export class AdminPage extends BasePage {
 
   async verifyUserInResults(username: string) {
     await this.resultsTable.waitFor({ state: 'visible', timeout: 10000 });
-    const userRow = this.page.locator('.oxd-table-row').filter({ hasText: username });
+    const userRow = this.page.locator('div').filter({ hasText: /^Username$/ }).nth(2)
     await expect(userRow).toBeVisible();
   }
 

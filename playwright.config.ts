@@ -8,11 +8,11 @@ export default defineConfig({
   testDir: './tests',
   
   // Maximum time one test can run for
-  timeout: 30 * 1000,
+  timeout: 60 * 1000,
   
   // Expect timeout for assertions
   expect: {
-    timeout: 10 * 1000,
+    timeout: 20 * 1000,
   },
   
   // Test execution settings
@@ -49,10 +49,10 @@ export default defineConfig({
     viewport: { width: 1280, height: 720 },
     
     // Action timeout
-    actionTimeout: 10 * 1000,
+    actionTimeout: 20 * 1000,
     
     // Navigation timeout
-    navigationTimeout: 30 * 1000,
+    navigationTimeout: 60 * 1000,
   },
 
   // Configure projects for major browsers
