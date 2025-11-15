@@ -1,4 +1,4 @@
-name: Prod Tests
+name: QA Tests
 
 on:
   schedule:
