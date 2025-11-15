@@ -24,9 +24,9 @@ jobs:
       
       - name: Run tests
         env:
-          baseURL: https://www.orangehrm.com/
-          testusername: ${{ secrets.TEST_USERNAME }}
-          password: ${{ secrets.TEST_PASSWORD }}
+          BASE_URL: https://www.orangehrm.com/
+          TEST_USERNAME: ${{ secrets.TEST_USERNAME }}
+          TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
           
 
           
