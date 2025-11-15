@@ -7,7 +7,14 @@
     "test": "playwright test",
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
-    "test:report": "playwright show-report"
+    "test:debug": "playwright test --debug",
+    "test:report": "playwright show-report",
+    "test:auth": "playwright test tests/auth.spec.ts",
+    "test:session": "playwright test tests/session.spec.ts",
+    "test:navigation": "playwright test tests/navigation.spec.ts",
+    "test:chromium": "playwright test --project=chromium",
+    "test:firefox": "playwright test --project=firefox",
+    "test:webkit": "playwright test --project=webkit"
   },
   "repository": {
     "type": "git",
